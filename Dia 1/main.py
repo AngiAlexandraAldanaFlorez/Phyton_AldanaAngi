@@ -35,10 +35,10 @@ while booleanito ==True:#while condicion_a_cumplir :
     print("sigo vivo")
     booleanito = False
 # ---- Condiciones ----
-texto1 = "campus":
-if texto 1 == "campus":
+texto1 = "campus"
+if texto1 == "campus":
     print ("soy campus")
-else
+else:
     print ("No soy campus")
 
     
