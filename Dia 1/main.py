@@ -23,8 +23,8 @@ print(numeroDecimalLargo)
 booleano= True
 print(booleano)
 # ---- Entradas parte del usuario con definición de tipo dato primitivo----
-entradaUsuario = str(input("Ingresa tu edad: " ))
-print ("Tu edad es: ", entradaUsuario)
+entradaUsuario = str(input("Ingresa tu edad: "))
+print ("Tu edad es: ",entradaUsuario)
 # ---- Ciclos ----
 ##Ciclo for
 for i  in range (5,10,2):#for contador in range (desde,hasta,pasos): 
@@ -40,6 +40,44 @@ if texto1 == "campus":
     print ("soy campus")
 else:
     print ("No soy campus")
+
+# ---- Funciones ----
+# funcion sin parametros ni retorno de valor 
+def diBienvenido():
+    print("¡Bienvenido!")
+
+diBienvenido()
+
+
+# funcion con parametro sin retorno 
+def bienvenidoConNombre(name):
+    print("Bienvenido "+ name + "!")
+
+name = input("ingresa tu nombre: ")
+    
+bienvenidoConNombre(name)
+    
+# funcion con parametros y con retorno
+def multiplica(val1, val2):
+    return val1 * val2
+
+multiplica(4,5)
+    
+# funcion sin parametro
+def saludos():
+    return "Hola, ¿como estas hoy?"
+    
+print(saludos())
+
+# ---- Arreglos----
+from array import array
+
+mi_arreglo = array('i',[1, 2, 3, 4, 5])
+
+print(mi_arreglo)    
+
+
+
 
     
     
