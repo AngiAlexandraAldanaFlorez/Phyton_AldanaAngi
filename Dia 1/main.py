@@ -60,8 +60,8 @@ bienvenidoConNombre(name)
 # funcion con parametros y con retorno
 def multiplica(val1, val2): 
     return val1 * val2
-    result = multiplica(5, 4)
-    print('multiplicacion = ',result)
+result= multiplica(5,4)
+print('multiplicacion = ',result)
     
 # funcion sin parametro
 def saludos():
