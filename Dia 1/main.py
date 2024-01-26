@@ -58,10 +58,9 @@ name = input("ingresa tu nombre: ")
 bienvenidoConNombre(name)
     
 # funcion con parametros y con retorno
-def multiplica(val1, val2):
+def multiplica(val1, val2): 
     return val1 * val2
 
-multiplica(4,5)
     
 # funcion sin parametro
 def saludos():
@@ -70,19 +69,11 @@ def saludos():
 print(saludos())
 
 # ---- Arreglos----
-from array import array
+mascotas = ["perro", "gato", "pato", "conejo"]
 
-mi_arreglo = array('i',[1, 2, 3, 4, 5])
-
-print(mi_arreglo)    
-
-
-
-
-    
-    
-
-
-
+print (mascotas[0])
+print (mascotas[1])
+print (mascotas[2])
+print (mascotas[3])
 
 ## Desarrolado por ANGI ALEXANDRA ALDANA FLOREZ - 1097096369
