@@ -2,7 +2,7 @@ print('---- Change Money to coins of 10, 5 and 1 ----')
 print('----------------------------------------------')
 n = int(input("How much money do you want to exchange? "))
 list=[]
-if n < 104 and n > 0:
+if n < 1000 and n > 0:
     d = n // 10
     p = n % 10
     e = p // 5
