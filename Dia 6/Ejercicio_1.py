@@ -1,0 +1,17 @@
+
+#REALIZAR UN PROGRAMA QUE USE UN DICCIONARIO PARA GESTIONAR LOS PRODUCTOS
+#Y PRECIOS DE LA TABLA, DONDE SE LE PREGUNTE AL USUARIO POR UN PRODUCTO
+#Y LA CANTIDAD. AL FINALIZAR MOSTRAR EN LA CONSOLA EL PRECIO TOTAL. SI
+#EL PRODUCTO NO ESTA DEBE MOSTRAR UN MENSAJE INFORMANDO SOBRE ELLO
+
+diccionario = {'Frijoles-':4000,'Arroz-':2200,'Papa-':1800}
+
+for llave , valor in diccionario.items():
+    print(llave,valor)
+
+
+a=int(input('Ingrese numero del producto que quiere'))
+print(a)
+
+
+
