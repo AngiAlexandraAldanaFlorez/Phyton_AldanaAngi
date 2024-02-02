@@ -1,7 +1,7 @@
 ## posiscion de la bola en el espacio y el tamaño
 ## x y 
 ## calcular tamaño si se conoce el radio
-## repreentacionde bola en el espacio 2d como una tupla (x,y,r)
+## representar bola en el espacio 2d como una tupla (x,y,r)
 ## Bolas chocan si la distancia es menor o igual a la suma de sus radios, 
 ## d=distancia entres sus centros
 import math
