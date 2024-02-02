@@ -2,8 +2,8 @@
 ## x y 
 ## calcular tamaño si se conoce el radio
 ## repreentacionde bola en el espacio 2d como una tupla (x,y,r)
-## so bolas chocan si la distancia es menor o igual a la suma de sus radios, 
-## d=ditancia entres sus cen
+## Bolas chocan si la distancia es menor o igual a la suma de sus radios, 
+## d=distancia entres sus centros
 import math
 Bola1=int
 Bola2=int
@@ -31,6 +31,4 @@ if distancia <= Suma_radio:
 else:
     print("FALSE")
 
-
-
-
+#Creado por Angi Alexandra Aldana
