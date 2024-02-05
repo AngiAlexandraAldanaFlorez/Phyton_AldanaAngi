@@ -1,27 +1,19 @@
-t = int(input(""))
-list=[]
-for p in range (--t):
-    print(list)
+def count_pairs(arr, n, k):
+    pairs = set()
+    for i in range(n):
+        for j in range(i + 1, n):
+            if (arr[i] + arr[j]) % k == 0:
+                pairs.add((min(arr[i], arr[j]), max(arr[i], arr[j])))
+    return len(pairs)
 
-    n,k= int(input(" "))
-    print(n, k)
+T = int(input("Enter the number of test cases: "))
+for case in range(T):
+    text = input("Enter the values for n and k separated by a space: ")
+    nums = input("Enter the list of numbers separated by spaces: ")
     
-    for _ in range(t):
-        def calcular_probabilidad(n, k):
-            nk_input = input("Ingrese dos números separados por un espacio (n k): ")
-        n, k = map(int, nk_input.split())
-
-        resultado = calcular_probabilidad(n, k)
-
-        print(f"{_ + 1}: {resultado}", end=" ")
-
-        x= input("")
-        a=[*x]
-        print(a)
-        for i in range(5):
-            numero=int(a[i])
-            a[i]=numero
-        print(a)
-
-
+    n, k = map(int, text.split())
+    T_n = [abs(int(num)) for num in nums.split()]
+    
+    result = count_pairs(T_n, n, k)
+    print("Case {}: {}".format(case + 1, result))
 
