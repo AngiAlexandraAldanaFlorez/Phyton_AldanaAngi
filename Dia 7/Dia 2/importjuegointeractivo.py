@@ -1,0 +1,3 @@
+import Juego_Interactivo
+
+Juego_Interactivo.JuegoAdivinaNumero()
