@@ -24,38 +24,40 @@ print(ordenados1[1])
 
 #3. Devuelve un listado con los identificadores de los clientes que han realizado 
 #algún pedido. Tenga en cuenta que no debe mostrar identificadores que estén repetidos.
+clientes = set()
 
-lista=[]
-for i in miJson['ventas']['pedidos']:
-    lista.append(i["id_cliente"])
-sin_repetir = set(lista)
-ultimo_conjunto = sin_repetir[-1]  
-print(ultimo_conjunto)
+for pedido in pedidos:
+    clientes.add(pedido['id_cliente'])
+
+clientes_con_pedido = list(clientes)
+for i in clientes_con_pedido:
+    print("id_cliente ",i)
 
 #4. Devuelve un listado de todos 
-#los pedidos que se realizaron durante el año 2017, cuya cantidad total sea superior a 500€.
+#los pedidos que se realizaron durante el año 2017,
+# cuya cantidad total sea superior a 500€.
 
-import datetime
+pedidos_2017_mas_500 = [pedido for pedido in pedidos if pedido['fecha'].startswith('2017') and pedido['total'] > 500]
+for i in pedidos_2017_mas_500:
+    print(i)
 
-fecha_inicio_2017 = datetime.datetime(2017, 1, 1)
-fecha_fin_2017 = datetime.datetime(2017, 12, 31)
+#5.Devuelve un listado con el nombre y los apellidos de los comerciales 
+#que tienen una comisión entre 0.05 y 0.11.
 
-pedidos_2017_superiores_500 = []
+#comerciales_filtrados = [{'nombre': c['nombre'], 'apellido1': c['apellido1'], 'apellido2': c['apellido2']} for c in comerciales if 0.05 <= c['comisión'] <= 0.11]
 
-for pedido in miJson['ventas']['pedidos']:
-    fecha_pedido = datetime.datetime.strptime(pedido['fecha'], '%Y-%m-%d')
-    if fecha_inicio_2017 <= fecha_pedido <= fecha_fin_2017:
-        cantidad_total = pedido['total']
-        if cantidad_total > 500:
-            pedidos_2017_superiores_500.append(pedido)
+#print(comerciales_filtrados)
+comerciales = ventas.get('comerciales') 
+##6.Devuelve el valor de la comisión de mayor 
+#valor que existe en la tabla comercial
+for comercial in comerciales:
+    if comercial['comision'] > comision_maxima:
+        comision_maxima = comercial['comision']
 
-# Imprimir los pedidos encontrados
-for pedido in pedidos_2017_superiores_500:
-    print(pedido)
+print("La comisión máxima es:", comision_maxima)
 
-
-
-
+ordenados8 = sorted(comerciales     , key=lambda x: x["comisiones"], reverse=True)
+print(ordenados8[0])
 
 ##miJson["ventas"]["clientes"][0]["lola"]=miJson["ventas"]["clientes"][0].pop("id")
 ##l=miJson["ventas"]["clientes"][0].pop("id")
