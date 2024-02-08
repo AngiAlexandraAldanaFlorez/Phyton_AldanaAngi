@@ -66,7 +66,7 @@ print('7------------------------------------------')
 ##for i in clientes:
     ##print(i)
 
-
-ordenados45 = sorted(clientes, key=lambda x: x["apellidos"], reverse=True)
+clientes = ventas.get('clientes')
+ordenados45 = sorted(clientes, key=lambda x: x["apellido1"], reverse=False)
 for i in ordenados45:
     print(i)
