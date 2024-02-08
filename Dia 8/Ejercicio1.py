@@ -17,13 +17,14 @@ for i in ordenados:
     print(i)
 
 #2.Devuelve todos los datos de los dos pedidos de mayor valor.
-print('------------------------------------------')
+print('2------------------------------------------')
 ordenados1 = sorted(pedidos, key=lambda x: x["total"], reverse=True)
 print(ordenados1[0])
 print(ordenados1[1])
 
 #3. Devuelve un listado con los identificadores de los clientes que han realizado 
 #algún pedido. Tenga en cuenta que no debe mostrar identificadores que estén repetidos.
+print('3------------------------------------------')
 clientes = set()
 
 for pedido in pedidos:
@@ -36,31 +37,36 @@ for i in clientes_con_pedido:
 #4. Devuelve un listado de todos 
 #los pedidos que se realizaron durante el año 2017,
 # cuya cantidad total sea superior a 500€.
-
+print('4------------------------------------------')
 pedidos_2017_mas_500 = [pedido for pedido in pedidos if pedido['fecha'].startswith('2017') and pedido['total'] > 500]
 for i in pedidos_2017_mas_500:
     print(i)
 
 #5.Devuelve un listado con el nombre y los apellidos de los comerciales 
 #que tienen una comisión entre 0.05 y 0.11.
-
-#comerciales_filtrados = [{'nombre': c['nombre'], 'apellido1': c['apellido1'], 'apellido2': c['apellido2']} for c in comerciales if 0.05 <= c['comisión'] <= 0.11]
-
-#print(comerciales_filtrados)
+print('5------------------------------------------')
 comerciales = ventas.get('comerciales') 
+for i in comerciales:
+    x=i.get('comisión')
+    if 0.05 <= x <= 0.11:
+        print(i)
+
+
 ##6.Devuelve el valor de la comisión de mayor 
 #valor que existe en la tabla comercial
-for comercial in comerciales:
-    if comercial['comision'] > comision_maxima:
-        comision_maxima = comercial['comision']
-
-print("La comisión máxima es:", comision_maxima)
-
-ordenados8 = sorted(comerciales     , key=lambda x: x["comisiones"], reverse=True)
+print('6------------------------------------------')
+ok = ventas.get('comerciales')
+ordenados8 = sorted(ok, key=lambda x: x["comisión"], reverse=True)
 print(ordenados8[0])
 
-##miJson["ventas"]["clientes"][0]["lola"]=miJson["ventas"]["clientes"][0].pop("id")
-##l=miJson["ventas"]["clientes"][0].pop("id")
-##nuevo_json= json.dumps(miJson)
+## Devuelve el identificador, nombre y primer apellido de aquellos clientes cuyo ciudad 
+##sea "Sevilla". El listado deberá estar ordenado alfabéticamente por apellidos y nombre.
+print('7------------------------------------------')
+##clientes=ventas.get('clientes')
+##for i in clientes:
+    ##print(i)
 
 
+ordenados45 = sorted(clientes, key=lambda x: x["apellidos"], reverse=True)
+for i in ordenados45:
+    print(i)
