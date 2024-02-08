@@ -27,12 +27,31 @@ print(ordenados1[1])
 
 lista=[]
 for i in miJson['ventas']['pedidos']:
-    lista.append(i['id_cliente'])
-    lista2=set(lista)
-    print(lista2)
+    lista.append(i["id_cliente"])
+sin_repetir = set(lista)
+ultimo_conjunto = sin_repetir[-1]  
+print(ultimo_conjunto)
 
+#4. Devuelve un listado de todos 
+#los pedidos que se realizaron durante el año 2017, cuya cantidad total sea superior a 500€.
 
+import datetime
 
+fecha_inicio_2017 = datetime.datetime(2017, 1, 1)
+fecha_fin_2017 = datetime.datetime(2017, 12, 31)
+
+pedidos_2017_superiores_500 = []
+
+for pedido in miJson['ventas']['pedidos']:
+    fecha_pedido = datetime.datetime.strptime(pedido['fecha'], '%Y-%m-%d')
+    if fecha_inicio_2017 <= fecha_pedido <= fecha_fin_2017:
+        cantidad_total = pedido['total']
+        if cantidad_total > 500:
+            pedidos_2017_superiores_500.append(pedido)
+
+# Imprimir los pedidos encontrados
+for pedido in pedidos_2017_superiores_500:
+    print(pedido)
 
 
 
